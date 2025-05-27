@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, GraduationCap } from 'lucide-react';
-import Button from './shared/Button';
+import React, { useState, useEffect } from "react";
+import { Menu, X, GraduationCap } from "lucide-react";
+import Button from "./shared/Button";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,37 +15,57 @@ const Header: React.FC = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <GraduationCap className="h-8 w-8 text-[#0f6861]" />
-          <span className="ml-2 text-2xl font-bold text-[#0f6861]">TopPlaced</span>
+          <span className="ml-2 text-2xl font-bold text-[#0f6861]">
+            TopPlaced
+          </span>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <a href="#how-it-works" className="text-gray-700 hover:text-[#0f6861] transition-colors">
+          <a
+            href="#how-it-works"
+            className="text-gray-700 hover:text-[#0f6861] transition-colors"
+          >
             How It Works
           </a>
-          <a href="#why-topplaced" className="text-gray-700 hover:text-[#0f6861] transition-colors">
+          <a
+            href="#why-topplaced"
+            className="text-gray-700 hover:text-[#0f6861] transition-colors"
+          >
             Why TopPlaced
           </a>
-          <a href="#job-card" className="text-gray-700 hover:text-[#0f6861] transition-colors">
+          <a
+            href="#job-card"
+            className="text-gray-700 hover:text-[#0f6861] transition-colors"
+          >
             Job Card
           </a>
-          <a href="#join" className="text-gray-700 hover:text-[#0f6861] transition-colors">
+          <a
+            href="#join"
+            className="text-gray-700 hover:text-[#0f6861] transition-colors"
+          >
             Join Us
+          </a>
+          <a
+            href="#join"
+            className="text-gray-700 hover:text-[#0f6861] transition-colors"
+          >
+            Workshop
           </a>
         </nav>
 
@@ -67,29 +87,29 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-md py-4 animate-fade-in-down">
           <nav className="flex flex-col space-y-4 px-4">
-            <a 
-              href="#how-it-works" 
+            <a
+              href="#how-it-works"
               className="text-gray-700 hover:text-[#0f6861] transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               How It Works
             </a>
-            <a 
-              href="#why-topplaced" 
+            <a
+              href="#why-topplaced"
               className="text-gray-700 hover:text-[#0f6861] transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Why TopPlaced
             </a>
-            <a 
-              href="#job-card" 
+            <a
+              href="#job-card"
               className="text-gray-700 hover:text-[#0f6861] transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Job Card
             </a>
-            <a 
-              href="#join" 
+            <a
+              href="#join"
               className="text-gray-700 hover:text-[#0f6861] transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
